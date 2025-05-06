@@ -62,8 +62,8 @@ function App() {
       <main>
         {stage === 'login' && <Login onLogin={user => { setUser(user); setStage('instructions'); }} />}
         {stage === 'instructions' && <Instructions user={user} onStart={() => setStage('quiz')} />}
-        {stage === 'quiz' && <Quiz user={user} />}
-      </main>
+        {stage === 'quiz' && <Quiz user={user} setStage={setStage} />}
+        </main>
     </div>
   );
 }

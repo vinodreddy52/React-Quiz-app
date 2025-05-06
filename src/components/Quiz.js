@@ -112,7 +112,7 @@ const questions = [
 const QUESTION_TIME = 15; // seconds per question
 const OVERALL_TIME = 180; // seconds for the whole quiz (3 minutes)
 
-const Quiz = () => {
+const Quiz = ({user, setStage}) => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);
   const [showScore, setShowScore] = useState(false);
@@ -242,6 +242,13 @@ const Quiz = () => {
     setTimer(QUESTION_TIME);
     setOverallTimer(OVERALL_TIME);
   };
+  
+  const reLogin = () => {
+    if (typeof setStage === 'function') {
+      setStage('login');
+    }
+  };
+  
 
   // Format overall timer as mm:ss
   const formatTime = (seconds) => {
@@ -271,6 +278,9 @@ const Quiz = () => {
           <p>You scored {score} out of {questions.length}</p>
           <button onClick={restartQuiz} className="restart-button">
             Restart Quiz
+          </button>
+          <button onClick={reLogin} className="relogin">
+           Login
           </button>
         </div>
       ) : (

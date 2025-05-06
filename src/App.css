@@ -97,7 +97,7 @@ main {
   backdrop-filter: blur(12px) saturate(1.2);
   border: 1.5px solid rgba(255,255,255,0.25);
   transition: box-shadow 0.3s;
-  padding: 32px 24px;
+  padding: 32px 40px;
   min-height: 400px;
   max-height: calc(100vh - 160px);
   overflow-y: auto;
